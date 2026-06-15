@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #F2EFE8; /* Lighter beige to match screenshot */
+  --surface: #F0E8DC;
+  --surface-2: #E8E0D2;
+  --border: rgba(0, 0, 0, 0.1);
+  --accent: #222222; /* Dark instead of orange */
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --error: #A63820;
+
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-utility: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --shadow-warm: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --border-soft: 1px solid var(--border);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  /* SVG noise pattern + Dot Grid */
+  background-image: 
+    radial-gradient(circle, rgba(0,0,0,0.15) 1px, transparent 1.5px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 32px 32px, auto;
+  background-position: 0 0, 0 0;
+  background-blend-mode: multiply;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-utility);
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  margin-top: 48px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-ascii {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 10px;
+  color: #333;
+  letter-spacing: 2px;
+  white-space: pre;
+  user-select: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes pulse-accent {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 34, 34, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 34, 34, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 34, 34, 0); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
