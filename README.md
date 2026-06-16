@@ -17,7 +17,7 @@ Papercast is an AI-powered platform that parses PDFs and generates a realistic, 
 ## 🛠️ Tech Stack
 - **Frontend**: React + Vite + Vanilla CSS
 - **Backend**: Node.js + Express
-- **AI Models**: Google Gemini 2.0 Flash, OpenAI, Sarvam AI API, ElevenLabs TTS
+- **AI Models**: OpenAI, Sarvam AI API
 
 ## 🚀 Live Demo
 - **Frontend**: Hosted on GitHub Pages
@@ -29,7 +29,7 @@ Papercast is an AI-powered platform that parses PDFs and generates a realistic, 
 
 ### Prerequisites
 - Node.js 18+
-- API Keys for Gemini, ElevenLabs, OpenAI, and Sarvam AI.
+- API Keys for OpenAI, and Sarvam AI.
 
 ### 1. Setup the Backend
 1. Open a terminal and navigate to the backend directory:
