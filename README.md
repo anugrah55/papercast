@@ -1,23 +1,43 @@
-# Papercast
+# 🎙️ Papercast
 
-Convert research papers (uploaded as PDFs) into AI-generated podcast episodes with two synthetic hosts.
+Transform dense research papers into engaging, multi-speaker podcast episodes. 
 
-## Stack
-- **Frontend**: React + Vite
+Papercast is an AI-powered platform that parses PDFs and generates a realistic, conversational podcast between two synthetic hosts. It breaks down complex topics, extracts key insights, and delivers them in a format that is easy to listen to on the go.
+
+![Hero Banner](./frontend/src/assets/hero.png)
+
+## ✨ Features
+- **PDF Parsing**: Instantly extracts text from any uploaded research paper.
+- **Dynamic Script Generation**: Powered by **Google Gemini 2.0 Flash**, the script adapts to different tones (Casual, Technical, Hype, Simple, Humorous).
+- **Interactive Deep Dives**: Select interactive features to explore topics further (e.g., "Explain using my interests", "Research to Hackathon Ideas").
+- **Closed Captions**: Real-time, Spotify-style synced lyrics that highlight the active speaker.
+- **Made with Sarvam AI & ElevenLabs**: High-quality voice synthesis for an incredibly realistic conversation.
+- **Modern UI**: A premium, glassmorphic interface with animated ASCII hosts.
+
+## 🛠️ Tech Stack
+- **Frontend**: React + Vite + Vanilla CSS
 - **Backend**: Node.js + Express
-- **PDF parsing**: `pdf-parse`
-- **Script generation**: Google Gemini 2.0 Flash API
-- **Voice synthesis**: ElevenLabs TTS API
+- **AI Models**: Google Gemini 2.0 Flash, OpenAI, Sarvam AI API, ElevenLabs TTS
 
-## Prerequisites
+## 🚀 Live Demo
+- **Frontend**: Hosted on GitHub Pages
+- **Backend**: Hosted on Render.com
+
+---
+
+## 💻 Local Development
+
+### Prerequisites
 - Node.js 18+
-- A Gemini API key (free at [aistudio.google.com](https://aistudio.google.com))
-- An ElevenLabs API key
+- API Keys for Gemini, ElevenLabs, OpenAI, and Sarvam AI.
 
-## Setup
-
-1. Clone or download this repository.
-2. Fill in the `.env` file in the `backend/` directory:
+### 1. Setup the Backend
+1. Open a terminal and navigate to the backend directory:
+   ```bash
+   cd backend
+   npm install
+   ```
+2. Create a `.env` file in the `backend/` directory and add your keys:
    ```env
    OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
    ELEVENLABS_API_KEY=<YOUR_ELEVENLABS_API_KEY>
@@ -27,24 +47,25 @@ Convert research papers (uploaded as PDFs) into AI-generated podcast episodes wi
    GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
    SARVAM_API_KEY=<YOUR_SARVAM_API_KEY>
    ```
-   *(Note: You can find free ElevenLabs voice IDs at [elevenlabs.io/voice-library](https://elevenlabs.io/voice-library))*
+3. Start the server:
+   ```bash
+   npm start
+   ```
 
-## Running the Application
+### 2. Setup the Frontend
+1. Open a new terminal and navigate to the frontend directory:
+   ```bash
+   cd frontend
+   npm install
+   ```
+2. Create a `.env` file in the `frontend/` directory to point to your backend:
+   ```env
+   VITE_API_URL=http://localhost:3001
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-### 1. Backend
-Open a terminal and run:
-```bash
-cd backend
-npm install
-node index.js
-```
-The backend will start on port `3001`.
-
-### 2. Frontend
-Open another terminal and run:
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Open the provided local URL (e.g. `http://localhost:5173`) in your browser.
+---
+*Made in India, for the world, with Sarvam AI.*
